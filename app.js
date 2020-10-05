@@ -81,7 +81,7 @@ async function start() {
             ]).then((data) => {
 
                 // create a new object with user data
-                const manager = new Manager(name, id, email, data);
+                const manager = new Manager(name, id, email, data.officeNo);
 
                 teamMember = fs.readFileSync("templates/manager.html");
 
