@@ -80,8 +80,8 @@ async function start() {
                 }
             ]).then((data) => {
 
-                // create a new object with user input data
-                
+                // create a new object with user data
+
             })
         }
     }
