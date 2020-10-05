@@ -114,9 +114,23 @@ async function start() {
                     }
                 ]).then((data) => {
                     const engineer = new Engineer(name, id, email, data.github);
-                })    
+                    teamMember = fs.readFileSync("templates/engineer.html");
+                    teamHTML = teamHTML + "\n" + eval('`'+ teamMember +'`');
+                });
+                break;    
 
         }
     }
+// places html in variable
+    const mainHTML = fs.readFileSync("templates/main.html");
 
+    teamHTML = eval('`'+ mainHTML +'`');
+
+    fs.writeFile("output/team.html", teamHTML, function(err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log ("Success");
+    });
 }
+start();
