@@ -81,8 +81,41 @@ async function start() {
             ]).then((data) => {
 
                 // create a new object with user data
+                const manager = new Manager(name, id, email, data);
 
-            })
+                teamMember = fs.readFileSync("templates/manager.html");
+
+                teamHtml = teamHTML + "\n" + eval('`'+ teamMember +'`');
+            });
+            break;
+
+            // Ask for school name intern is attending, then ask for name, email
+            case "Intern":
+                await inquirer.prompt([
+                    {
+                        type: "input",
+                        message: "What school is your Intern attending?",
+                        name: "school"
+                    }
+                ]).then((data) => {
+                    const intern = new Intern(name, id, email, data.school);
+                    teamMember = fs.readFileSync("templates/intern.html");
+                    teamHTML = teamHTML + "\n" + eval('`'+ teamMember +'`');
+                });
+                break;
+
+            
+            case "Engineer":
+                await inquirer.prompt([
+                    {
+                        type: "input",
+                        message: "What is your Engineers Github?",
+                        name: "github"
+                    }
+                ]).then((data) => {
+                    const engineer = new Engineer(name, id, email, data.github);
+                })    
+
         }
     }
 
