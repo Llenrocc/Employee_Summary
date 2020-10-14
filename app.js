@@ -1,6 +1,7 @@
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const render = require("./lib/htmlRenderer");
 
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -24,7 +25,7 @@ async function start() {
     });
 
     // If no one on team, app will stop
-    if (teamsize === 0) {
+    if (teamSize === 0) {
         console.log("There is no one on your team.");
         return;
     }
