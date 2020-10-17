@@ -12,20 +12,22 @@ This node application will assist managers/owners with quickly, and easily gener
 
 ## Folder structure
 
+```
 lib/
 output/
-    team.html
+    `team.html`
 templates/
-    engineer.html
-    intern.html
-    main.html
-    manager.html
+    `engineer.html`
+    `intern.html`
+    `main.html`
+    `manager.html`
 test/
     Employee.test.js
     Engineer.test.js
     Intern.test.js
     Manager.test.js
-app.js    
+app.js
+```    
 
 ## Usage
 ***
